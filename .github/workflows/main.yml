@@ -17,4 +17,4 @@ jobs:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
           TIMEZONE: "Asia/Tashkent"
-        run: python zammad_daily_report.py
+        run: python daily_zammad_report.py
