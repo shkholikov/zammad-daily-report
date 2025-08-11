@@ -1,0 +1,20 @@
+name: Daily Zammad Report
+on:
+  schedule:
+    - cron: "0 16 * * *"   # 20:00 Asia/Tashkent = 16:00 UTC (check DST if you change TZ)
+  workflow_dispatch:
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install requests
+      - env:
+          ZAMMAD_URL: ${{ secrets.ZAMMAD_URL }}
+          ZAMMAD_TOKEN: ${{ secrets.ZAMMAD_TOKEN }}
+          TG_TOKEN: ${{ secrets.TG_TOKEN }}
+          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+          TIMEZONE: "Asia/Tashkent"
+        run: python zammad_daily_report.py
