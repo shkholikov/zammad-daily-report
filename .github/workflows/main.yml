@@ -14,7 +14,7 @@ jobs:
       - env:
           ZAMMAD_URL: ${{ secrets.ZAMMAD_URL }}
           ZAMMAD_TOKEN: ${{ secrets.ZAMMAD_TOKEN }}
-          TG_TOKEN: ${{ secrets.TG_TOKEN }}
-          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
           TIMEZONE: "Asia/Tashkent"
         run: python zammad_daily_report.py
