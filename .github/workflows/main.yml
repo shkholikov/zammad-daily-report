@@ -1,7 +1,7 @@
 name: Daily Zammad Report
 on:
   schedule:
-    - cron: "0 16 * * *"   # 20:00 Asia/Tashkent = 16:00 UTC (check DST if you change TZ)
+  # - cron: "0 16 * * *"   # 20:00 Asia/Tashkent = 16:00 UTC (check DST if you change TZ)
   workflow_dispatch:
 jobs:
   report:
